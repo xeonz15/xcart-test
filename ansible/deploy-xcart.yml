@@ -1,5 +1,5 @@
 ---
-- host: xcart-srv
+- host: all
   task:
    - name: Copy file with owner and permissions
      copy:
