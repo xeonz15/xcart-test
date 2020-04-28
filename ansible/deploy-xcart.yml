@@ -1,0 +1,11 @@
+---
+- host: xcart-srv
+  task:
+   - name: Copy file with owner and permissions
+     copy:
+        src: x-cart-5.4.1.3-ru.tgz
+        dest: /root/x-cart-5.4.1.3-ru.tgz
+        owner: root
+        group: root
+        mode: '0644'
+    
