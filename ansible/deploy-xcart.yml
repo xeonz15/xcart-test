@@ -3,11 +3,9 @@
 - name: Deploy XCart
   hosts: all
   tasks:
-    - name: Copy file with owner and permissions
-      copy:
-        src: x-cart-5.4.1.3-ru.tgz
-        dest: /root/x-cart-5.4.1.3-ru.tgz
-        owner: root
-        group: root
-        mode: '0644'
-    
+    #- include_tasks: php.yml
+    #- include_tasks: nginx.yml
+    #- include_tasks: nginx-config.yml
+    - include_tasks: mysql.yml
+
+      

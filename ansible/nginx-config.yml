@@ -1,0 +1,43 @@
+    - name: Copy nginx conf
+      copy:
+        src: files/nginx-def-srv.conf
+        dest: /etc/nginx/default.d/nginx-def-srv.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Copy nginx php-fpm conf
+      copy:
+        src: files/nginx-php-fpm.conf
+        dest: /etc/nginx/conf.d/nginx-php-fpm.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Copy nginx main conf
+      copy:
+        src: files/nginx.conf
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Restart nginx
+      service:
+          name: nginx
+          state: restarted
+
+    - name: Extracting xcart tgz
+      unarchive:
+        src: files/x-cart-5.4.1.3-ru.tgz
+        dest: /var/www/html
+
+    - name: Owner nginx to files
+      file: path=/var/www/html owner=nginx group=nginx state=directory recurse=yes
+
+    - name: Appling new SELinux file context to html dir
+      command: restorecon -R /var/www/html
+
+    - name: Set nginx SELinux permissions
+      command: setsebool -P httpd_unified 1
+

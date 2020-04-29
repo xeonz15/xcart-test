@@ -1,0 +1,36 @@
+---
+- name: Copy nginx main conf
+  copy:
+    src: files/maria-db.repo
+    dest: /etc/yum.repos.d/maria-db.repo
+    owner: root
+    group: root
+    mode: '0644'
+                                              
+- name: Install MySQL packages
+  yum:
+      name: MariaDB-server
+      state: present
+ 
+- name: Enable the MySQL service
+  service:
+   name: mariadb
+   state: started
+   enabled: true
+
+- name: Install python modules for mysql
+  yum: 
+    name: MySQL-python
+    state: present
+
+- name: Create a new database 
+  mysql_db:
+    name: xcart
+    state: present
+    
+- name: Create database user 
+  mysql_user:
+    name: xcart
+    password: xcart12345
+    priv: 'xcart.*:ALL'
+    state: present
