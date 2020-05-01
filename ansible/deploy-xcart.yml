@@ -3,8 +3,8 @@
 - name: Deploy XCart
   hosts: all
   tasks:
-    - include_tasks: php.yml
     - include_tasks: nginx.yml
+    - include_tasks: php.yml
     - include_tasks: nginx-config.yml
     - include_tasks: mysql.yml
 
