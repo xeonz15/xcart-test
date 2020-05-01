@@ -15,11 +15,11 @@
 - name: ensure nginx is running
   service: name=nginx state=started enabled=yes
 
-- name: Allow firewall http/https
-  command: firewall-cmd --zone=public --permanent --add-service=http --add-service=https
+#- name: Allow firewall http/https
+#  command: firewall-cmd --zone=public --permanent --add-service=http --add-service=https
 
-- name: Restart firewall
-  command: firewall-cmd --reload
+#- name: Restart firewall
+#  command: firewall-cmd --reload
 
 # handlers:
 #   - name: restart nginx
