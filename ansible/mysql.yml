@@ -32,5 +32,5 @@
   mysql_user:
     name: "{{ mysql_dbuser }}"
     password: "{{ mysql_dbpass }}"
-    priv: '"{{ mysql_db }}".*:ALL'
+    priv: '{{ mysql_db }}.*:ALL'
     state: present
