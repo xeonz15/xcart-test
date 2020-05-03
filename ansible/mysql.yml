@@ -1,5 +1,5 @@
 ---
-- name: Copy nginx main conf
+- name: Install MariaDB repo
   copy:
     src: files/maria-db.repo
     dest: /etc/yum.repos.d/maria-db.repo
@@ -7,12 +7,12 @@
     group: root
     mode: '0644'
                                               
-- name: Install MySQL packages
+- name: Install MariaDB packages
   yum:
       name: MariaDB-server
       state: present
  
-- name: Enable the MySQL service
+- name: Enable the MariaDB service
   service:
    name: mariadb
    state: started
