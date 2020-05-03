@@ -1,1 +1,0 @@
-terraform destroy -var "digitalocean_token=${digitalocean_token}"

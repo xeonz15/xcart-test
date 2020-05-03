@@ -1,1 +1,0 @@
-terraform apply -var "digitalocean_token=${digitalocean_token}"
