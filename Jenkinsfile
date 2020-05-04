@@ -14,7 +14,7 @@ node () {
         stage ('xcart - Build') {
 
             withCredentials([
-                string(credentialsId: 'c_DO_TOKEN', variable: 'cr_DO_TOKEN')
+                string(credentialsId: 'c_DO_TOKEN', variable: 'cr_DO_TOKEN'),
                 string(credentialsId: 'c_DB_pass', variable: 'DBPass')
             ]) {
              sh """
