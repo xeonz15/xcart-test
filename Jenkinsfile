@@ -1,12 +1,11 @@
 timestamps {
 
-//def DBParams = input message: 'Please set Database Parameters', parameters: [string(defaultValue: 'xcart', description: 'Database name', name: 'DBName', trim: false), string(defaultValue: 'xcart', description: 'Database user', name: 'DBUser', trim: false), password(defaultValue: 'xcart1234', description: 'Database password', name: 'DBPass')]
 
 node () {
 
- def DBName = DBParams['DBName']
- def DBUser = DBParams['DBUser']
- #def DBPass = DBParams['DBPass']
+ def DBName = "xcart"
+ def DBUser = "xcart"
+ //def DBPass = DBParams['DBPass']
 
 
         stage ('xcart - Checkout') {
