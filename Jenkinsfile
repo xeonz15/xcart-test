@@ -1,6 +1,6 @@
 timestamps {
 
-#def DBParams = input message: 'Please set Database Parameters', parameters: [string(defaultValue: 'xcart', description: 'Database name', name: 'DBName', trim: false), string(defaultValue: 'xcart', description: 'Database user', name: 'DBUser', trim: false), password(defaultValue: 'xcart1234', description: 'Database password', name: 'DBPass')]
+//def DBParams = input message: 'Please set Database Parameters', parameters: [string(defaultValue: 'xcart', description: 'Database name', name: 'DBName', trim: false), string(defaultValue: 'xcart', description: 'Database user', name: 'DBUser', trim: false), password(defaultValue: 'xcart1234', description: 'Database password', name: 'DBPass')]
 
 node () {
 
