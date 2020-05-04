@@ -15,7 +15,7 @@ node () {
 
             withCredentials([
                 string(credentialsId: 'c_DO_TOKEN', variable: 'cr_DO_TOKEN'),
-                string(credentialsId: 'c_DB_pass', variable: 'DBPass')
+                string(credentialsId: 'c_DB_Pass', variable: 'DBPass')
             ]) {
              sh """
              ${WORKSPACE}/create_droplet.sh ${cr_DO_TOKEN}
