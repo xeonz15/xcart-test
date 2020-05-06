@@ -1,7 +1,11 @@
 db=$1
 dbuser=$2
 dbpass=$3
-ans_bin=/usr/bin/ansible-playbook
+
+#ans_bin=/usr/bin/ansible-playbook
+#ansible bin for jenkins in docker
+ans_bin=/usr/local/bin/ansible-playbook
+
 target_hosts=terraform/instance_ip.txt
 
 if [ -z "$db" ] || [ -z "$dbuser" ] || [ -z "$dbpass" ]

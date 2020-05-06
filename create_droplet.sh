@@ -1,7 +1,10 @@
 
 do_token=$1
 wait_time=60
-terraform_bin=/usr/local/bin/terraform
+
+#terraform_bin=/usr/local/bin/terraform
+#terraform location for jenkins in docker
+terraform_bin=/usr/bin/terraform
 
 if [ -z "$do_token" ]
 then
