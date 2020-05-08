@@ -7,7 +7,7 @@
 - git:
     repo: https://github.com/xeonz15/xcart-lemp-docker-env.git
     dest: /home/xcart-env
-  when: dir_exists.stat.exists
+  when: not dir_exists.stat.exists
 
 - name: Change env folder permissions
   command: chmod  -R ugo=rw /home/xcart-env
