@@ -12,7 +12,6 @@ node () {
                 string(credentialsId: 'c_DO_TOKEN', variable: 'cr_DO_TOKEN')
             ]) {
              sh """
-             ${WORKSPACE}/create_ssh_key.sh
              ${WORKSPACE}/create_droplet.sh ${cr_DO_TOKEN}
              ${WORKSPACE}/configure_droplet-docker-ver.sh
               """
