@@ -2,12 +2,12 @@
 - name: stat directories if they exist
   stat: 
     path: /home/xcart-env
-  register: dir-exists
+  register: dir_exists
   
 - git:
     repo: https://github.com/xeonz15/xcart-lemp-docker-env.git
     dest: /home/xcart-env
-  when: dir-exists.stat.exists
+  when: dir_exists.stat.exists
 
 - name: Change env folder permissions
   command: chmod  -R ugo=rw /home/xcart-env
