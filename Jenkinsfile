@@ -14,12 +14,14 @@ node () {
         stage ('xcart - Build') {
 
             withCredentials([
-                string(credentialsId: 'c_DO_TOKEN', variable: 'cr_DO_TOKEN'),
-                string(credentialsId: 'c_DB_Pass', variable: 'DBPass')
+                string(credentialsId: 'c_DO_TOKEN', variable: 'cr_DO_TOKEN')
+                //,
+                //string(credentialsId: 'c_DB_Pass', variable: 'DBPass')
             ]) {
              sh """
              ${WORKSPACE}/create_droplet.sh ${cr_DO_TOKEN}
-             ${WORKSPACE}/configure_droplet.sh ${DBName} ${DBUser} ${DBPass}
+             //${WORKSPACE}/configure_droplet.sh ${DBName} ${DBUser} ${DBPass}
+             ${WORKSPACE}/configure_droplet-docker-ver.sh
               """
             }
         }

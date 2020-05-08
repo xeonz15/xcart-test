@@ -1,0 +1,9 @@
+---
+
+- name: Deploy XCart Docker version
+  hosts: all
+  tasks:
+    #- include_tasks: install-docker.yml
+    - include_tasks: install-xcart-docker-env.yml
+
+      

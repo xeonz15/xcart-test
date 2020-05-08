@@ -1,0 +1,22 @@
+---
+#- name: 
+- git:
+    repo: https://github.com/xeonz15/xcart-lemp-docker-env.git
+    dest: /home/xcart-env
+
+- name: Change env folder permissions
+  command: chmod  -R ugo=rw /home/xcart-env
+
+- name: Change env folder permissions
+  command: chmod  -R ugo=rwX /home/xcart-env
+      
+#- name: run the docker-compose service defined in docker-compose.yml
+#  docker_compose:
+#    project_src: /home/xcart-env
+#  register: output
+
+- name: Building and starting docker containers for LEMP
+  command: docker-compose up -d
+  args:
+    chdir: /home/xcart-env
+  register: output
