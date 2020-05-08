@@ -15,6 +15,6 @@ else
     mkdir $hdir/.ssh
     mkdir $hdir/.ssh/key_backup
     cp id_rsa* $hdir/.ssh/key_backup
-    ssh-keygen -q -t rsa -N '' -f hdir/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
+    ssh-keygen -q -t rsa -N '' -f $hdir/.ssh/id_rsa 2>/dev/null <<< y >/dev/null
 fi
     
