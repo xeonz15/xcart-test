@@ -6,6 +6,7 @@ Credential of type "Secret text" must exists:
 
 
 For debug may be used:
+
 create_droplet.sh [token] - Create digital ocean droplet
 
 configure_droplet.sh [token] - Install LEMP and X-Cart without docker to the droplet 
