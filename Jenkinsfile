@@ -17,6 +17,7 @@ node () {
              ${WORKSPACE}/create_ssh_key.sh ${HDIR}
              ${WORKSPACE}/create_droplet.sh ${cr_DO_TOKEN}
              ${WORKSPACE}/configure_droplet-docker-ver.sh
+             ${WORKSPACE}/create_snapshot.sh ${cr_DO_TOKEN}
               """
             }
         }
