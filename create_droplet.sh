@@ -12,9 +12,9 @@ then
   exit 1
 fi
 
-cd terraform/create_droplet
+cd terraform/droplet
 $terraform_bin init
-$terraform_bin plan -var "digitalocean_token=$do_token"
+$terraform_bin plan  -var "digitalocean_token=$do_token" 
 $terraform_bin apply -var "digitalocean_token=$do_token" -auto-approve
 $terraform_bin output instance_ip_addr > ../instance_ip.txt
 echo Waiting $wait_time sec while instance booting...
