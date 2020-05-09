@@ -25,3 +25,11 @@
   args:
     chdir: /home/xcart-env
   register: output
+
+- name: creating docker-compose service
+  copy:
+    src: files/docker-compose-app.service
+    dest: /etc/systemd/system/docker-compose-app.service
+
+- name: Enabling docker-compose service
+  command: systemctl enable docker-compose-app
